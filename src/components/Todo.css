@@ -1,0 +1,15 @@
+.Header h2 {
+  font-style: italic;
+}
+
+button {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+}
+
+.Todo p {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: lightgray;
+}
