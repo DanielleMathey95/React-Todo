@@ -44,8 +44,8 @@ class App extends React.Component {
 
   toggleComplete = taskId => {
     this.setState({
-      tasks: this.setState.tasks.map(task =>{
-        if(taskID === task.id) {
+      tasks: this.state.tasks.map(task =>{
+        if(taskId === task.id) {
           return {
             ...task, 
             completed: !task.completed
@@ -65,8 +65,16 @@ class App extends React.Component {
 
   render() { 
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="Container">
+        <div className="Header">
+          <h2>Welcome to your Todo App!</h2>
+          <TodoForm addTask={this.addTask} />
+        </div>
+        <TodoList
+          tasks={this.state.tasks}
+          toggleComplete={this.toggleComplete}
+          clearCompleted={this.clearCompleted}
+        />
       </div>
     );
   }
